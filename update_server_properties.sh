@@ -104,7 +104,7 @@ function adjustCommandBlock() {
         sed -i 's/enable-command-block=true\|enable-command-block=false/enable-command-block=false/g' "$properties_file"
         echo "Enable command block updated."
     elif [[ $cblock != "true" && $cblock != "false" ]]; then
-        echo "Error: Invalid option. Supported options are 'true' and 'false'."
+        echo "Error: Invalid 'enable-command-block' option. Supported options are 'true' and 'false'."
         # exit
         exit 1
     fi
@@ -143,7 +143,7 @@ function adjustDifficulty() {
 }
 
 function adjustMaxPlayerCount() {
-    sed -i "s/max-player=.*/difficulty=$number/g" "$properties_file"
+    sed -i "s/max-players=.*/max-players=$number/g" "$properties_file"
     echo "Max player count updated."
 }
 
@@ -156,7 +156,7 @@ function adjustPVP() {
         sed -i 's/pvp=.*/pvp=false/g' "$properties_file"
         echo "PvP status updated."
     elif [[ $pvp != "true" && $pvp != "false" ]]; then
-        echo "Error: Invalid option. Supported options are 'true' and 'false'."
+        echo "Error: Invalid 'pvp' option. Supported options are 'true' and 'false'."
         # exit
         exit 1
     fi
