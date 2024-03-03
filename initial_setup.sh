@@ -7,6 +7,9 @@ apt update && apt upgrade -y
 # Install Java
 apt install openjdk-17-jre-headless -y
 
+# Allow connections on port 25565
+ufw allow 25565
+
 # Create server directory
 mkdir minecraft_server
 
